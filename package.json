@@ -1,7 +1,7 @@
 {
-  "name": "react-todo",
+  "name": "react-todo-redux",
   "version": "1.0.0",
-  "description": "React todo app",
+  "description": "React todo app with redux",
   "main": "index.js",
   "scripts": {
     "test": "karma start",

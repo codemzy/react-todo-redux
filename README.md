@@ -7,6 +7,6 @@
     ------------------------------------------------------------------------------ 
 
 
-React To Do.
+React To Do with Redux.
 
-A simple React to do app.
+A simple React to do app with redux.
