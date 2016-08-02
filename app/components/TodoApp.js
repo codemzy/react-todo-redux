@@ -44,19 +44,6 @@ class TodoApp extends React.Component {
         });
     }
     
-    _handleToggle(id) {
-        var updatedTodos = this.state.todos.map(function(todo) {
-            if (todo.id === id) {
-                todo.completed = !todo.completed;
-                todo.completedAt = todo.completed ? moment().unix() : false;
-            }
-            return todo;
-        });
-        this.setState({
-            todos: updatedTodos
-        });
-    }
-    
     render() {
         let {todos, showCompleted, searchText} = this.state;
         let filteredTodos = TodoAPI.filterTodos(todos, showCompleted, searchText);
@@ -65,7 +52,7 @@ class TodoApp extends React.Component {
                 <img className="float-center" src="/img/todotiger.png" alt="todo tiger" />
                 <div className="todowrap">
                     <TodoSearch onSearch={this._handleSearch.bind(this)} />
-                    <TodoList todos={filteredTodos} onToggle={this._handleToggle.bind(this)} />
+                    <TodoList />
                     <TodoForm onAdd={this._handleAddTodo.bind(this)} />
                 </div>
             </div>

@@ -23,7 +23,7 @@ store.dispatch(actions.addTodo('New todo test from app.js'));
 store.dispatch(actions.setSearchText('test'));
 store.dispatch(actions.toggleShowCompleted());
 
-// routes
-var routes = require('./config/router');
+// routes - passing store for Provider
+var routes = require('./config/router')(store);
 
 ReactDOM.render(routes, document.getElementById('app'));

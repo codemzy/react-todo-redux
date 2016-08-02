@@ -1,5 +1,7 @@
 var React = require('react');
 var moment = require('moment');
+var {connect} = require('react-redux');
+var actions =  require('./../actions/actions.js');
 
 class Todo extends React.Component {
     render() {
@@ -20,7 +22,8 @@ class Todo extends React.Component {
         };
         return (
             <div className={todoClass} onClick={() => {
-                this.props.onToggle(this.props.id);
+                // this.props.onToggle(this.props.id);
+                this.props.dispatch(actions.toggleTodo(this.props.id));
             }}>
                 <div className="row">
                     <div className="small-1 columns">
@@ -36,4 +39,5 @@ class Todo extends React.Component {
     }
 }
 
-module.exports = Todo;
+// put todos from redux state onto this component
+module.exports = connect()(Todo);

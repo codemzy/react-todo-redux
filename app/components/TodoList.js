@@ -1,4 +1,5 @@
 var React = require('react');
+var {connect} = require('react-redux');
 
 // components
 var Todo = require('./Todo.js');
@@ -17,7 +18,7 @@ class TodoList extends React.Component {
             }
             return todos.map((todo) => {
                 return (
-                    <Todo key={todo.id} text={todo.text} id={todo.id} completed={todo.completed} createdAt={todo.createdAt} completedAt={todo.completedAt} onToggle={this.props.onToggle} />
+                    <Todo key={todo.id} text={todo.text} id={todo.id} completed={todo.completed} createdAt={todo.createdAt} completedAt={todo.completedAt} />
                 );
             });
         };
@@ -29,4 +30,11 @@ class TodoList extends React.Component {
     }
 }
 
-module.exports = TodoList;
+// put todos from redux state onto this component
+module.exports = connect(
+    (state) => {
+        return {
+            todos: state.todos
+        };
+    }
+)(TodoList);
