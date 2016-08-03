@@ -36,5 +36,11 @@ export var todosReducer = (state = [], action) => {
         });
        return updatedTodos;
    } 
+   if (action.type === 'ADD_TODOS') {
+       return [
+        ...state,
+        ...action.todos
+        ];
+   }
    return state;
 };
