@@ -3,7 +3,7 @@ var moment = require('moment');
 var {connect} = require('react-redux');
 var actions =  require('./../actions/actions.js');
 
-class Todo extends React.Component {
+export class Todo extends React.Component {
     render() {
         var todoClass = "todo";
         var checkClass = "fa fa-square fa-lg";
@@ -40,4 +40,5 @@ class Todo extends React.Component {
 }
 
 // put todos from redux state onto this component
-module.exports = connect()(Todo);
+// this is the default export - the export above is just for tests
+export default connect()(Todo);
