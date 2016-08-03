@@ -1,12 +1,14 @@
 var React = require('react');
+var {connect} = require('react-redux');
+var actions =  require('./../actions/actions.js');
 
-class TodoForm extends React.Component {
+export class TodoForm extends React.Component {
     
     _onSubmitAdd(e) {
        e.preventDefault();
        var text = this.refs.text.value;
        if (text.length > 0) {
-           this.props.onAdd(text);
+           this.props.dispatch(actions.addTodo(text));
            this.refs.text.value = "";
        } else {
            this.refs.text.focus();
@@ -25,4 +27,4 @@ class TodoForm extends React.Component {
     }
 }
 
-module.exports = TodoForm;
+export default connect()(TodoForm);

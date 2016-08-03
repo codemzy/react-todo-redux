@@ -3,7 +3,7 @@ var moment = require('moment');
 
 // components
 import TodoList from './TodoList.js';
-var TodoForm = require('./TodoForm.js');
+import TodoForm from './TodoForm.js';
 var TodoSearch = require('./TodoSearch.js');
 
 // api
