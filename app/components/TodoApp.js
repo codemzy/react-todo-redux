@@ -2,7 +2,7 @@ var React = require('react');
 var moment = require('moment');
 
 // components
-var TodoList = require('./TodoList.js');
+import TodoList from './TodoList.js';
 var TodoForm = require('./TodoForm.js');
 var TodoSearch = require('./TodoSearch.js');
 

@@ -2,9 +2,9 @@ var React = require('react');
 var {connect} = require('react-redux');
 
 // components
-var Todo = require('./Todo.js');
+import Todo from './Todo.js';
 
-class TodoList extends React.Component {
+export class TodoList extends React.Component {
     render() {
         var {todos} = this.props;
         var renderTodos = () => {
@@ -31,7 +31,7 @@ class TodoList extends React.Component {
 }
 
 // put todos from redux state onto this component
-module.exports = connect(
+export default connect(
     (state) => {
         return {
             todos: state.todos
