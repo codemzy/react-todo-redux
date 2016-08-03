@@ -24,6 +24,7 @@ module.exports = {
     },
     filterTodos: function(todos, showCompleted, searchText) {
         var filteredTodos = todos;
+        searchText = searchText.toLowerCase();
         // filter by showCompleted
         filteredTodos = filteredTodos.filter(function(todo) {
             // return the todo if it is false (not completed) OR if showCompleted is true return the item regardless

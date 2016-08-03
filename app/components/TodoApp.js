@@ -4,7 +4,7 @@ var moment = require('moment');
 // components
 import TodoList from './TodoList.js';
 import TodoForm from './TodoForm.js';
-var TodoSearch = require('./TodoSearch.js');
+import TodoSearch from './TodoSearch.js';
 
 // api
 var TodoAPI = require('../api/TodoAPI.js');
@@ -37,21 +37,12 @@ class TodoApp extends React.Component {
         });
     }
     
-    _handleSearch(showCompleted, searchText) {
-        this.setState({
-            showCompleted: showCompleted,
-            searchText: searchText.toLowerCase()
-        });
-    }
-    
     render() {
-        let {todos, showCompleted, searchText} = this.state;
-        let filteredTodos = TodoAPI.filterTodos(todos, showCompleted, searchText);
         return (
             <div>
                 <img className="float-center" src="/img/todotiger.png" alt="todo tiger" />
                 <div className="todowrap">
-                    <TodoSearch onSearch={this._handleSearch.bind(this)} />
+                    <TodoSearch />
                     <TodoList />
                     <TodoForm onAdd={this._handleAddTodo.bind(this)} />
                 </div>

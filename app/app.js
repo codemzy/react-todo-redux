@@ -18,11 +18,6 @@ store.subscribe(() => {
     console.log('New state', store.getState());
 });
 
-// test actions
-store.dispatch(actions.addTodo('New todo test from app.js'));
-store.dispatch(actions.setSearchText('test'));
-store.dispatch(actions.toggleShowCompleted());
-
 // routes - passing store for Provider
 var routes = require('./config/router')(store);
 
