@@ -2,7 +2,6 @@
   "name": "react-todo-redux",
   "version": "1.0.0",
   "description": "React todo app with redux",
-  "main": "index.js",
   "scripts": {
     "test": "karma start",
     "start": "node server.js"
@@ -38,6 +37,7 @@
     "karma-webpack": "^1.7.0",
     "mocha": "^2.5.3",
     "node-sass": "^3.8.0",
+    "now": "^4.10.2",
     "phantomjs-prebuilt": "^2.1.7",
     "react-addons-test-utils": "~15.1.0",
     "sass-loader": "^4.0.0",
@@ -46,6 +46,6 @@
     "webpack": "^1.13.1"
   },
   "engines": {
-    "node": "5.7.0"
+    "node": "7.7.3"
   }
 }
