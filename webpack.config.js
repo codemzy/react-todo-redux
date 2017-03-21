@@ -1,5 +1,8 @@
 var webpack = require('webpack');
 
+// change to development or production
+process.env.NODE_ENV = 'production';
+
 module.exports = {
     entry: [
         'script!jquery/dist/jquery.min.js',
@@ -13,6 +16,17 @@ module.exports = {
         new webpack.ProvidePlugin({
             '$': 'jquery',
             'jQuery': 'jquery'
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compressor: {
+                warnings: false
+            },
+            sourceMap: true
+        }),
+        new webpack.DefinePlugin({
+          'process.env':{
+            'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+          }
         })
     ],
     output: {
@@ -36,5 +50,5 @@ module.exports = {
             { test: /\.scss$/, loader: "style-loader!css-loader!sass-loader" }
         ]
     },
-    devtool: 'cheap-module-eval-source-map'
+    devtool: process.env.NODE_ENV === 'production' ? false : 'cheap-module-eval-source-map'
 };
